@@ -1,0 +1,4 @@
+--extra-index-url https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2024/simple/ robotpy
+apriltag~=0.0.16
+opencv-python~=4.10.0.84
+numpy==1.26.4
