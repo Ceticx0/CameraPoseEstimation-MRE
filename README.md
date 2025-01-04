@@ -13,7 +13,11 @@ camera_to_tag_0 = Transform3d(camera_to_tag_pose_0.translation(), camera_to_tag_
 field_to_camera_0 = field_to_tag_pose.transformBy(camera_to_tag_0.inverse())
 field_to_camera_pose_0 = Pose3d(field_to_camera_0.translation(), field_to_camera_0.rotation())
 ```
-I'll go through the output of each of these lines:
+I'll go through the output of each of these lines
+when run with something around this:
+tvec: [2.57059178, -0.17651291, -0.9058226]
+rvec: [-0.22837402, -0.13251081, 2.5620833]
+which is the usual tvec and rvec
 
 **field\_to\_tag\_pose**   
 `Pose3d(Translation3d(x=1.841500, y=8.204200, z=1.355852), Rotation3d(x=0.000000, y=0.000000, z=-1.570796))`
