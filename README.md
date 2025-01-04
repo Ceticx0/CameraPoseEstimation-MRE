@@ -26,8 +26,8 @@ This number is correct, it's just taken from the atfl json file so its the most 
 **camera\_to\_tag\_pose\_0**
 `Pose3d(Translation3d(x=2.660625, y=0.237158, z=0.137607), Rotation3d(x=-2.874303, y=-0.340958, z=2.417726))`
 
-Already this seems wrong, for now I’ve been ignoring rotation, but the translation assumes the apriltag is 0.137 m above the camera if I’m reading it correctly? That is obviously not true which you can see in the photo, the camera is about 0.23m off the ground in reality for reference  
-I’m not sure why this number would be wrong, the only modification that's being made is openCVPoseToWPILib, which, guess what, is directly stolen from polaris as well.
+~~Already this seems wrong, for now I’ve been ignoring rotation, but the translation assumes the apriltag is 0.137 m above the camera if I’m reading it correctly? That is obviously not true which you can see in the photo, the camera is about 0.23m off the ground in reality for reference~~ <- I'm not sure of this anymore, reading the conversion function it makes sense why z wouldn't correspond to world height
+I’m not sure why this number would be wrong, the only modification that's being made is from openCVPoseToWPILib, which, guess what, is directly stolen from polaris as well.
 
 ```python
 def openCVPoseToWPILib(tvec: np.typing.NDArray[np.float64], rvec: np.typing.NDArray[np.float64]) -> Pose3d:  
@@ -44,7 +44,7 @@ def openCVPoseToWPILib(tvec: np.typing.NDArray[np.float64], rvec: np.typing.NDAr
    )
 ```
 
-Maybe it is correct, and I’m understanding it wrong, so I’ll continue:  
+~~Maybe it is correct, and I’m understanding it wrong~~ (I think I was), so I’ll continue:
 **camera\_to\_tag\_0**  
 `Transform3d(Translation3d(x=2.660625, y=0.237158, z=0.137607), Rotation3d(x=-2.874303, y=-0.340958, z=2.417726))`  
 No surprises here  
